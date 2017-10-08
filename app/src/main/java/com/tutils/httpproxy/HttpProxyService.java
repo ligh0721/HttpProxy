@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.IBinder;
 import android.util.Log;
+import android.widget.Toast;
 
 import gobind.Gobind;
 
@@ -54,6 +55,11 @@ public class HttpProxyService extends Service {
         // 参数一：唯一的通知标识；参数二：通知消息。
         startForeground(110, notification);// 开始前台服务
 
+        // toast
+        Toast.makeText(getApplicationContext(),
+                getString(R.string.toast_proxy_is_started),
+                Toast.LENGTH_SHORT).show();
+
         return Service.START_REDELIVER_INTENT;
     }
 
@@ -65,6 +71,12 @@ public class HttpProxyService extends Service {
             //m_proxyThread.stop();
         }
         stopForeground(true);  // 停止前台服务--参数：表示是否移除之前的通知
+
+        // toast
+        Toast.makeText(getApplicationContext(),
+                getString(R.string.toast_proxy_is_stopped),
+                Toast.LENGTH_SHORT).show();
+
         super.onDestroy();
     }
 

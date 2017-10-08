@@ -2,4 +2,6 @@
     <string name="app_name">tutils社区HTTP代理</string>
     <string name="MainActivity_description">HTTP代理正在运行。</string>
     <string name="url_home">http://www.tutils.com/</string>
+    <string name="toast_proxy_is_started">代理已启动</string>
+    <string name="toast_proxy_is_stopped">代理已停止</string>
 </resources>
