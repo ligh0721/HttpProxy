@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">tutils.HttpProxy</string>
+    <string name="MainActivity_description">HTTP Proxy is running.</string>
+    <string name="url_home">http://www.tutils.com/</string>
+</resources>
