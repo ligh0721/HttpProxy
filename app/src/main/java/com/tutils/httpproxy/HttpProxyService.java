@@ -19,7 +19,7 @@ import gobind.Gobind;
 public class HttpProxyService extends Service {
     private static final String TAG = HttpProxyService.class.getSimpleName();
     private String m_agentAddr = "tvps.tutils.com:53129";
-    private String m_proxyAddr = "127.0.0.1:56080";
+    private String m_proxyAddr = "0.0.0.0:56080";
     private Thread m_proxyThread;
 
     @Override
