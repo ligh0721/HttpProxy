@@ -4,4 +4,5 @@
     <string name="url_home">http://www.tutils.com/</string>
     <string name="toast_proxy_is_started">代理已启动</string>
     <string name="toast_proxy_is_stopped">代理已停止</string>
+    <string name="noti_proxy_service_is_running">HTTP代理服务正在运行</string>
 </resources>

@@ -45,7 +45,7 @@ public class HttpProxyService extends Service {
                 .setLargeIcon(BitmapFactory.decodeResource(this.getResources(),
                         R.mipmap.ic_launcher)) // 设置下拉列表中的图标(大图标)
                 .setSmallIcon(R.drawable.ic_stat_noti) // 设置状态栏内的小图标
-                .setContentTitle("HTTP Proxy is running") // 设置下拉列表里的标题
+                .setContentTitle(getString(R.string.noti_proxy_service_is_running)) // 设置下拉列表里的标题
                 .setContentText(m_proxyAddr)  // 设置上下文内容
                 .setWhen(System.currentTimeMillis()); // 设置该通知发生的时间
 
