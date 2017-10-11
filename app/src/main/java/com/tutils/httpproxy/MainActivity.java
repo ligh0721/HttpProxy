@@ -7,15 +7,15 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 public class MainActivity extends AppCompatActivity {
-    private Intent m_intent;
+    private Intent mIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        m_intent = new Intent(this, HttpProxyService.class);
-        startService(m_intent);
+        mIntent = new Intent(this, HttpProxyService.class);
+        startService(mIntent);
 
         loadWebView();
     }
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        stopService(m_intent);// 在退出Activity时停止该服务
+        stopService(mIntent);// 在退出Activity时停止该服务
     }
 
     private void loadWebView() {

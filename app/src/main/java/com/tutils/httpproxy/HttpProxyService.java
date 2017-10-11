@@ -18,9 +18,9 @@ import gobind.Gobind;
 
 public class HttpProxyService extends Service {
     private static final String TAG = HttpProxyService.class.getSimpleName();
-    private String m_agentAddr = "tvps.tutils.com:53129";
-    private String m_proxyAddr = "0.0.0.0:56080";
-    private Thread m_proxyThread;
+    private String mAgentAddr = "tvps.tutils.com:53129";
+    private String mProxyAddr = "0.0.0.0:56080";
+    private Thread mProxyThread;
 
     @Override
     public void onCreate() {
@@ -46,7 +46,7 @@ public class HttpProxyService extends Service {
                         R.mipmap.ic_launcher)) // 设置下拉列表中的图标(大图标)
                 .setSmallIcon(R.drawable.ic_stat_noti) // 设置状态栏内的小图标
                 .setContentTitle(getString(R.string.noti_proxy_service_is_running)) // 设置下拉列表里的标题
-                .setContentText(m_proxyAddr)  // 设置上下文内容
+                .setContentText(mProxyAddr)  // 设置上下文内容
                 .setWhen(System.currentTimeMillis()); // 设置该通知发生的时间
 
         Notification notification = builder.getNotification(); // 获取构建好的Notification
@@ -66,9 +66,9 @@ public class HttpProxyService extends Service {
     @Override
     public void onDestroy() {
         Log.d(TAG, "onDestroy()");
-        if (m_proxyThread != null && m_proxyThread.isAlive()) {
+        if (mProxyThread != null && mProxyThread.isAlive()) {
             // TODO: stop thread in itself
-            //m_proxyThread.stop();
+            //mProxyThread.stop();
         }
         stopForeground(true);  // 停止前台服务--参数：表示是否移除之前的通知
 
@@ -88,17 +88,17 @@ public class HttpProxyService extends Service {
     }
 
     private void startProxyThread() {
-        if (m_proxyThread == null) {
-            m_proxyThread = new Thread(new Runnable() {
+        if (mProxyThread == null) {
+            mProxyThread = new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    Gobind.startProxy(m_agentAddr, m_proxyAddr);
+                    Gobind.startProxy(mAgentAddr, mProxyAddr);
                 }
             });
         }
 
-        if (!m_proxyThread.isAlive()) {
-            m_proxyThread.start();
+        if (!mProxyThread.isAlive()) {
+            mProxyThread.start();
         }
     }
 }
