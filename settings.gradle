@@ -1,1 +1,1 @@
-include ':app', ':gobind'
+include ':app', ':tnetproxy'

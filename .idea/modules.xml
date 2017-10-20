@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HttpProxy.iml" filepath="$PROJECT_DIR$/HttpProxy.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/gobind/gobind.iml" filepath="$PROJECT_DIR$/gobind/gobind.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tnetproxy/tnetproxy.iml" filepath="$PROJECT_DIR$/tnetproxy/tnetproxy.iml" />
     </modules>
   </component>
 </project>

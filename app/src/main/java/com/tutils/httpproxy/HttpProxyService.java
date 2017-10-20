@@ -10,7 +10,7 @@ import android.os.IBinder;
 import android.util.Log;
 import android.widget.Toast;
 
-import gobind.Gobind;
+import tnetproxy.Tnetproxy;
 
 /**
  * Created by t5w0rd on 2017/10/8.
@@ -18,8 +18,8 @@ import gobind.Gobind;
 
 public class HttpProxyService extends Service {
     private static final String TAG = HttpProxyService.class.getSimpleName();
-    //private String mAgentAddr = "tvps.tutils.com:53129";
-    private String mAgentAddr = "tvps.tutils.com:51081";
+    private String mAgentAddr = "tvps.tutils.com:53129";
+    //private String mAgentAddr = "tvps.tutils.com:51081";
     private String mProxyAddr = "0.0.0.0:56080";
     private Thread mProxyThread;
 
@@ -93,7 +93,7 @@ public class HttpProxyService extends Service {
             mProxyThread = new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    Gobind.startProxy(mAgentAddr, mProxyAddr);
+                    Tnetproxy.startProxy(mAgentAddr, mProxyAddr);
                 }
             });
         }
